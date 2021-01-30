@@ -10,7 +10,7 @@ public class ConveyorBehavior : MonoBehaviour
 
    void OnTriggerStay(Collider other)
    {
-       //other.transform.position = Vector3.MoveTowards(other.transform.position, endpoint.position, speed*Time.deltaTime);
+       
        other.attachedRigidbody.velocity = other.attachedRigidbody.velocity + (endpoint.position - other.transform.position)*speed*Time.deltaTime;
    }
 }
