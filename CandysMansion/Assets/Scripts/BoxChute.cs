@@ -11,16 +11,21 @@ public class BoxChute : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(boxToSpawn != null)
-        {
-            Instantiate(boxToSpawn, spawnPoint.transform.position, Quaternion.identity);
-        }
-        
+        StartCoroutine(SpawnBox());
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private IEnumerator SpawnBox()
+    {
+        while(true)
+        {
+            Instantiate(boxToSpawn, spawnPoint.transform.position, Random.rotation);
+            yield return new WaitForSeconds(3);
+        }
     }
 }
