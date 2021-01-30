@@ -26,7 +26,10 @@ public class PlayerController : MonoBehaviour
         float camy = InputManager.GetAxis("CameraV");
         transform.Rotate(0f, camx * cameraSensitivity, 0f);
         cameraAnchor.transform.Rotate(new Vector3(0f, camx * cameraSensitivity, 0f), Space.World);
-        cameraAnchor.transform.Rotate(new Vector3(camy * cameraSensitivity, 0f, 0f), Space.Self);
+        if (!((Mathf.DeltaAngle(0f, Camera.main.transform.rotation.eulerAngles.x) >= 75 && camy > 0f) || 
+            (Mathf.DeltaAngle(0f,Camera.main.transform.rotation.eulerAngles.x) <= -75f && camy < 0f)))
+            cameraAnchor.transform.Rotate(new Vector3(camy * cameraSensitivity, 0f, 0f), Space.Self);
+        
 
         //move player (and camera anchor)
         float x = InputManager.GetAxis("Horizontal");

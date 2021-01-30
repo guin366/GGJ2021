@@ -7,6 +7,7 @@ public class BoxChute : MonoBehaviour
     public bool isActive;
     public GameObject spawnPoint;
     public GameObject boxToSpawn;
+    public float spawnCD = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class BoxChute : MonoBehaviour
         while(true)
         {
             Instantiate(boxToSpawn, spawnPoint.transform.position, Random.rotation);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(spawnCD);
         }
     }
 }
