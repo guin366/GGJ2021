@@ -25,7 +25,7 @@ public class BoxChute : MonoBehaviour
         while(true)
         {
             Instantiate(boxToSpawn, spawnPoint.transform.position, Random.rotation);
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
