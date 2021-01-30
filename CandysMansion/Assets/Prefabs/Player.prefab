@@ -551,12 +551,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f012d982e33a14f9c1192f92205320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraAnchor: {fileID: 0}
+  cameraAnchorPrefab: {fileID: 8024434251628680524, guid: 260b211119e972f4e9e3b283f5447a42,
+    type: 3}
   speed: 3000
   cameraSensitivity: 4
   drag: {x: 10, y: 0}
   jumpVel: 35
   gravity: 500
+  pauseMenuPrefab: {fileID: 2965147410969882867, guid: 8c135ce67f95f5b4c8661c0c1c5228e2,
+    type: 3}
 --- !u!54 &4631370885336134155
 Rigidbody:
   m_ObjectHideFlags: 0

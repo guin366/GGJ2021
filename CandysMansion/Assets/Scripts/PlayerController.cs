@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Luminosity.IO;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController singleton;
-    public GameObject cameraAnchor;
+    public GameObject cameraAnchorPrefab;
+    GameObject cameraAnchor;
     public float speed;
     public float cameraSensitivity;
     public Vector2 drag = new Vector2(10f, 0f);
@@ -14,17 +16,35 @@ public class PlayerController : MonoBehaviour
     public float jumpVel;
     public float gravity = 20f;
 
+    public GameObject pauseMenuPrefab;
+    GameObject pauseMenu;
+    Collider coll;
+    int floorMask;
+    int boxMask;
+
     // Start is called before the first frame update
     void Awake()
     {
         singleton = this;
         rb = GetComponent<Rigidbody>();
+        coll = GetComponent<Collider>();
+        floorMask = LayerMask.NameToLayer("Floor");
+        boxMask = LayerMask.NameToLayer("Box");
     }
 
     private void OnEnable()
     {
-        cameraAnchor.transform.rotation = Quaternion.identity;
+        cameraAnchor = Instantiate(cameraAnchorPrefab, transform.position, Quaternion.identity);
         cameraAnchor.transform.Rotate(0f, transform.rotation.y, 0f, Space.World);
+
+        pauseMenu = Instantiate(pauseMenuPrefab);
+        pauseMenu.GetComponentInChildren<Button>().onClick.AddListener(() => Application.Quit());
+        pauseMenu.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        Destroy(cameraAnchor);
     }
 
     private void Update()
@@ -32,8 +52,34 @@ public class PlayerController : MonoBehaviour
         //perform jump if on ground
         if (InputManager.GetButtonDown("Jump") && OnGround())
         {
-            print("jump?");
             rb.velocity = new Vector3(rb.velocity.x, jumpVel, rb.velocity.z);
+        }
+
+        //hide and center mouse while playing
+        if (Time.timeScale > 0f)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+        //pause game
+        if (InputManager.GetButtonDown("Pause"))
+        {
+            if (pauseMenu.activeInHierarchy)
+            {
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
     }
 
@@ -66,8 +112,18 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector3.down * gravity * 60f * Time.fixedDeltaTime);
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * (GetComponent<Collider>().bounds.extents.y + 1f));
+    }
+
     bool OnGround()
     {
-        return true;
+        print(transform.position + Vector3.down * coll.bounds.extents.y);
+        bool check = Physics.Raycast(transform.position,
+            Vector3.down,
+            coll.bounds.extents.y + 1f);
+        print(check);
+        return check;
     }
 }
