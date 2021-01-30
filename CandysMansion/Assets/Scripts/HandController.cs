@@ -12,6 +12,7 @@ public class HandController : MonoBehaviour
     Rigidbody rb;
     Collider grabbed;
     bool pressed = false;
+    public float throwForce = 500f;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,8 +30,9 @@ public class HandController : MonoBehaviour
             Ungrab(grabbed);
         }
 
-        float grabAxis = InputManager.GetAxis("Grab");
-        if (isRight ? grabAxis < 0.5f : grabAxis > -0.5f)
+        string grabName = isRight ? "GrabR" : "GrabL";
+        float grabAxis = InputManager.GetAxis(grabName);
+        if (grabAxis < 0.5f)
         {
             Ungrab(grabbed);
         }
@@ -40,13 +42,14 @@ public class HandController : MonoBehaviour
             Collider[] hits = new Collider[2];
             int count = Physics.OverlapSphereNonAlloc(transform.position, detectRange, hits, 1 << boxLayer);
             //check rt if right hand, otherwise check lt
-            if (count > 0 && isRight ? grabAxis >= 0.5f : grabAxis <= -0.5f)
+            if (count > 0)
             {
-                print("hit and rt?");
                 Ungrab(grabbed);
                 Grab(hits[0]);
             }
         }
+
+
     }
 
     void Ungrab(Collider coll)
@@ -56,6 +59,16 @@ public class HandController : MonoBehaviour
             Joint j = coll.GetComponent<Joint>();
             Destroy(j);
             grabbed = null;
+            StartCoroutine(Throw(coll.attachedRigidbody));
+        }
+    }
+
+    IEnumerator Throw(Rigidbody proj)
+    {
+        for(int i=0; i<2; i++)
+        {
+            proj.AddForce((transform.forward + transform.up).normalized * throwForce);
+            yield return new WaitForFixedUpdate();
         }
     }
 
@@ -63,7 +76,6 @@ public class HandController : MonoBehaviour
     {
         if (coll != null && coll.GetComponent<Joint>() == null)
         {
-            print("grabbing + " + coll.gameObject.name);
             //coll.gameObject.transform.position = transform.position;
             Joint j = coll.gameObject.AddComponent<FixedJoint>();
             j.connectedBody = rb;
