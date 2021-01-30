@@ -25,8 +25,11 @@ public class BoxChute : MonoBehaviour
     {
         while(true)
         {
-            Instantiate(boxToSpawn, spawnPoint.transform.position, Random.rotation);
+            GameObject spawnedObject = Instantiate(boxToSpawn, spawnPoint.transform.position, Random.rotation);
+            Rigidbody spawnedRb = spawnedObject.GetComponent<Rigidbody>();
+            spawnedRb.AddTorque(new Vector3(Random.Range(0.0f, 100.0f), Random.Range(0.0f, 100.0f), Random.Range(0.0f, 100.0f)));
             yield return new WaitForSeconds(spawnCD);
+
         }
     }
 }
