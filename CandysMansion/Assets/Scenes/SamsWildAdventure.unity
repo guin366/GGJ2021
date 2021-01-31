@@ -4654,8 +4654,8 @@ MonoBehaviour:
   trigger: {fileID: 0}
   text: {fileID: 0}
   active: 1
-  currentScene: 0
-  nextScene: 0
+  currentScene: 4
+  nextScene: 8
 --- !u!1001 &1309997960
 PrefabInstance:
   m_ObjectHideFlags: 0
