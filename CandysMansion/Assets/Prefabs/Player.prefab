@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2674801448166936900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4631370885336134156}
   m_RootOrder: 3
@@ -485,7 +485,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.00000035762787, y: 0, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -555,6 +555,7 @@ Transform:
   - {fileID: 4631370885893019787}
   - {fileID: 4631370885743732224}
   - {fileID: 1199104727975180081}
+  - {fileID: 1023917754239341244}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -781,6 +782,19 @@ MonoBehaviour:
         m_gamepadIndex: 0
       - m_positive: 0
         m_negative: 0
+        m_deadZone: 0
+        m_gravity: 1
+        m_sensitivity: 0.2
+        m_snap: 0
+        m_invert: 0
+        m_type: 1
+        m_axis: 0
+        m_joystick: 0
+        m_gamepadButton: 0
+        m_gamepadAxis: 0
+        m_gamepadIndex: 0
+      - m_positive: 0
+        m_negative: 0
         m_deadZone: 0.2
         m_gravity: 1
         m_sensitivity: 1
@@ -808,6 +822,19 @@ MonoBehaviour:
         m_gamepadButton: 0
         m_gamepadAxis: 0
         m_gamepadIndex: 0
+      - m_positive: 0
+        m_negative: 0
+        m_deadZone: 0
+        m_gravity: 1
+        m_sensitivity: 0.2
+        m_snap: 0
+        m_invert: 0
+        m_type: 1
+        m_axis: 1
+        m_joystick: 0
+        m_gamepadButton: 0
+        m_gamepadAxis: 0
+        m_gamepadIndex: 0
     - m_name: GrabR
       m_description: 
       m_bindings:
@@ -827,11 +854,11 @@ MonoBehaviour:
       - m_positive: 324
         m_negative: 0
         m_deadZone: 0
-        m_gravity: 1
-        m_sensitivity: 1
+        m_gravity: 1000
+        m_sensitivity: 1000
         m_snap: 0
         m_invert: 0
-        m_type: 0
+        m_type: 2
         m_axis: 0
         m_joystick: 0
         m_gamepadButton: 0
@@ -856,11 +883,11 @@ MonoBehaviour:
       - m_positive: 323
         m_negative: 0
         m_deadZone: 0
-        m_gravity: 1
-        m_sensitivity: 1
+        m_gravity: 1000
+        m_sensitivity: 1000
         m_snap: 0
         m_invert: 0
-        m_type: 0
+        m_type: 2
         m_axis: 0
         m_joystick: 0
         m_gamepadButton: 0
@@ -883,6 +910,35 @@ MonoBehaviour:
         m_gamepadAxis: 0
         m_gamepadIndex: 0
       - m_positive: 350
+        m_negative: 0
+        m_deadZone: 0
+        m_gravity: 1
+        m_sensitivity: 1
+        m_snap: 0
+        m_invert: 0
+        m_type: 0
+        m_axis: 0
+        m_joystick: 0
+        m_gamepadButton: 0
+        m_gamepadAxis: 0
+        m_gamepadIndex: 0
+    - m_name: Pause
+      m_description: 
+      m_bindings:
+      - m_positive: 27
+        m_negative: 0
+        m_deadZone: 0
+        m_gravity: 1
+        m_sensitivity: 1
+        m_snap: 0
+        m_invert: 0
+        m_type: 0
+        m_axis: 0
+        m_joystick: 0
+        m_gamepadButton: 0
+        m_gamepadAxis: 0
+        m_gamepadIndex: 0
+      - m_positive: 357
         m_negative: 0
         m_deadZone: 0
         m_gravity: 1
@@ -1028,3 +1084,86 @@ MonoBehaviour:
   detectRange: 3
   material: {fileID: 0}
   throwForce: 3000
+--- !u!1 &5534141790869388663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023917754239341244}
+  - component: {fileID: 7028960869983402408}
+  - component: {fileID: 3500395897073885209}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1023917754239341244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534141790869388663}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.41, z: 0.47}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 4631370885336134156}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &7028960869983402408
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534141790869388663}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 39.773003
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 1000
+  field of view: 101.815346
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &3500395897073885209
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534141790869388663}
+  m_Enabled: 1
