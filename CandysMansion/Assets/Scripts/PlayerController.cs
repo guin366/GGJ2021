@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         //there can only be one
-        foreach (Camera camera in FindObjectsOfType<Camera>()) 
+        foreach (Camera camera in FindObjectsOfType<Camera>())
         {
             Destroy(camera.gameObject);
         }
@@ -132,7 +132,6 @@ public class PlayerController : MonoBehaviour
 
         //apply gravity
         rb.AddForce(Vector3.down * gravity * 60f * Time.fixedDeltaTime);
-
     }
 
     private void OnDrawGizmos()
