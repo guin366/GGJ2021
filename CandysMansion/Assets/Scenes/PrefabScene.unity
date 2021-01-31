@@ -415,11 +415,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4631370885336134154, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: cameraAnchor
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4631370885336134156, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
         type: 3}
       propertyPath: m_RootOrder
@@ -475,155 +470,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
+    - target: {fileID: 4631370885336134158, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
         type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[7].m_name
-      value: Pause
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[3].m_bindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[7].m_bindings.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[1].m_axis
+      propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[1].m_type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[2].m_axis
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[2].m_type
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[3].m_bindings.Array.data[1].m_axis
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[3].m_bindings.Array.data[1].m_type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[4].m_bindings.Array.data[1].m_type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[5].m_bindings.Array.data[1].m_type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[2].m_gravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[3].m_bindings.Array.data[1].m_gravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[4].m_bindings.Array.data[1].m_gravity
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[5].m_bindings.Array.data[1].m_gravity
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[7].m_bindings.Array.data[0].m_gravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[7].m_bindings.Array.data[1].m_gravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[1].m_deadZone
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[2].m_deadZone
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[7].m_bindings.Array.data[0].m_positive
-      value: 27
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[7].m_bindings.Array.data[1].m_positive
-      value: 357
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[1].m_sensitivity
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[2].m_bindings.Array.data[2].m_sensitivity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[3].m_bindings.Array.data[1].m_sensitivity
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[4].m_bindings.Array.data[1].m_sensitivity
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[5].m_bindings.Array.data[1].m_sensitivity
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[7].m_bindings.Array.data[0].m_sensitivity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4631370885743732225, guid: ef232d5d1c9a25642b2cb68e6edf2f47,
-        type: 3}
-      propertyPath: m_controlSchemes.Array.data[0].m_actions.Array.data[7].m_bindings.Array.data[1].m_sensitivity
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef232d5d1c9a25642b2cb68e6edf2f47, type: 3}

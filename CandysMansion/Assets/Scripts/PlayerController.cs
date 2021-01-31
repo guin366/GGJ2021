@@ -18,24 +18,29 @@ public class PlayerController : MonoBehaviour
 
     public GameObject pauseMenuPrefab;
     GameObject pauseMenu;
-    Collider coll;
+    CapsuleCollider coll;
+    float cameraOffset = 0f;
     int floorMask;
     int boxMask;
+    int wallMask;
 
     // Start is called before the first frame update
     void Awake()
     {
         singleton = this;
         rb = GetComponent<Rigidbody>();
-        coll = GetComponent<Collider>();
+        coll = GetComponent<CapsuleCollider>();
         floorMask = LayerMask.NameToLayer("Floor");
         boxMask = LayerMask.NameToLayer("Box");
+        wallMask = LayerMask.NameToLayer("Wall");
     }
 
     private void OnEnable()
     {
         cameraAnchor = Instantiate(cameraAnchorPrefab, transform.position, Quaternion.identity);
         cameraAnchor.transform.Rotate(0f, transform.rotation.y, 0f, Space.World);
+        cameraOffset = Vector3.Distance(cameraAnchor.GetComponentInChildren<Camera>().transform.position,
+            transform.position);
 
         pauseMenu = Instantiate(pauseMenuPrefab);
         pauseMenu.GetComponentInChildren<Button>().onClick.AddListener(() => Application.Quit());
@@ -97,10 +102,22 @@ public class PlayerController : MonoBehaviour
         float camx = InputManager.GetAxis("CameraH");
         float camy = InputManager.GetAxis("CameraV");
         transform.Rotate(0f, camx * cameraSensitivity, 0f);
+        GameObject camera = Camera.main.gameObject;
         cameraAnchor.transform.Rotate(new Vector3(0f, camx * cameraSensitivity, 0f), Space.World);
-        if (!((Mathf.DeltaAngle(0f, Camera.main.transform.rotation.eulerAngles.x) >= 75 && camy > 0f) || 
-            (Mathf.DeltaAngle(0f,Camera.main.transform.rotation.eulerAngles.x) <= -75f && camy < 0f)))
+        if (!((Mathf.DeltaAngle(0f, camera.transform.rotation.eulerAngles.x) >= 75 && camy > 0f) || 
+            (Mathf.DeltaAngle(0f,camera.transform.rotation.eulerAngles.x) <= -75f && camy < 0f)))
             cameraAnchor.transform.Rotate(new Vector3(camy * cameraSensitivity, 0f, 0f), Space.Self);
+
+        //zoom camera in if it's hitting something
+        RaycastHit[] hits = new RaycastHit[2];
+        Vector3 dir = (camera.transform.position - transform.position).normalized;
+        Camera.main.transform.position = transform.position + dir * cameraOffset;
+        if (Physics.RaycastNonAlloc(camera.transform.position, -dir, hits,
+            Vector3.Distance(camera.transform.position, transform.position), 
+            1<<wallMask|1<<floorMask) > 0)
+        {
+            Camera.main.transform.position -= dir * hits[0].distance;
+        }
 
         //move player (and camera anchor)
         float x = InputManager.GetAxis("Horizontal");
@@ -110,6 +127,7 @@ public class PlayerController : MonoBehaviour
 
         //apply gravity
         rb.AddForce(Vector3.down * gravity * 60f * Time.fixedDeltaTime);
+
     }
 
     private void OnDrawGizmos()
