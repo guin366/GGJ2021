@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        //there can only be one
+        foreach (Camera camera in FindObjectsOfType<Camera>()) 
+        {
+            Destroy(camera.gameObject);
+        }
         cameraAnchor = Instantiate(cameraAnchorPrefab, transform.position, Quaternion.identity);
         cameraAnchor.transform.Rotate(0f, transform.rotation.y, 0f, Space.World);
         cameraOffset = Vector3.Distance(cameraAnchor.GetComponentInChildren<Camera>().transform.position,
@@ -116,7 +121,7 @@ public class PlayerController : MonoBehaviour
             Vector3.Distance(camera.transform.position, transform.position), 
             1<<wallMask|1<<floorMask) > 0)
         {
-            Camera.main.transform.position -= dir * hits[0].distance;
+            Camera.main.transform.position -= dir * (hits[0].distance + 3f);
         }
 
         //move player (and camera anchor)
