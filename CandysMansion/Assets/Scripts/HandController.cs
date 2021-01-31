@@ -58,6 +58,7 @@ public class HandController : MonoBehaviour
         {
             Joint j = coll.GetComponent<Joint>();
             Destroy(j);
+            grabbed.GetComponent<BombBox>().grabbed = false;
             grabbed = null;
             StartCoroutine(Throw(coll.attachedRigidbody));
         }
@@ -80,6 +81,7 @@ public class HandController : MonoBehaviour
             Joint j = coll.gameObject.AddComponent<FixedJoint>();
             j.connectedBody = rb;
             grabbed = coll;
+            grabbed.GetComponent<BombBox>().grabbed = true;
         }
     }
 }
