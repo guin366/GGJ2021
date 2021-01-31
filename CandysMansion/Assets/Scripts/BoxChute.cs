@@ -6,7 +6,7 @@ public class BoxChute : MonoBehaviour
 {
     public bool isActive;
     public GameObject spawnPoint;
-    public GameObject boxToSpawn;
+    public GameObject[] boxToSpawn;
     public float spawnCD = 0.5f;
 
     // Start is called before the first frame update
@@ -25,7 +25,8 @@ public class BoxChute : MonoBehaviour
     {
         while(true)
         {
-            GameObject spawnedObject = Instantiate(boxToSpawn, spawnPoint.transform.position, Random.rotation);
+            int spawn = Random.Range(0, boxToSpawn.Length);
+            GameObject spawnedObject = Instantiate(boxToSpawn[spawn], spawnPoint.transform.position, Random.rotation);
             Rigidbody spawnedRb = spawnedObject.GetComponent<Rigidbody>();
             spawnedRb.AddTorque(new Vector3(Random.Range(0.0f, 100.0f), Random.Range(0.0f, 100.0f), Random.Range(0.0f, 100.0f)));
             yield return new WaitForSeconds(spawnCD);
