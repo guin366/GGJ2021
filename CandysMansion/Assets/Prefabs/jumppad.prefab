@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b639d59e3907d0845bce762b3a52df56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceDirection: {fileID: 7505806853654520498}
+  jumpForce: 500
 --- !u!65 &2695528184282263049
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8486258613653395468}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 6.4, y: 1.0709283, z: 6.4}

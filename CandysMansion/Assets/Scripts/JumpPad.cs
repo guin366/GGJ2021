@@ -18,9 +18,9 @@ public class JumpPad : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //other.attachedRigidbody.AddForce(this.transform.up * jumpForce);
-        other.attachedRigidbody.velocity = this.transform.up * jumpForce;
+        other.attachedRigidbody.velocity = this.transform.up * jumpForce*Time.deltaTime;
     }
 }
