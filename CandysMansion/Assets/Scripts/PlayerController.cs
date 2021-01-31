@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController singleton;
     public GameObject cameraAnchorPrefab;
     GameObject cameraAnchor;
+
+    public GameObject camera;
     public float speed;
     public float cameraSensitivity;
     public Vector2 drag = new Vector2(10f, 0f);
@@ -106,15 +108,15 @@ public class PlayerController : MonoBehaviour
         //manipulate camera
         float camx = InputManager.GetAxis("CameraH");
         float camy = InputManager.GetAxis("CameraV");
-        transform.Rotate(0f, camx * cameraSensitivity, 0f);
+        transform.Rotate(0f, camx *cameraSensitivity, 0f);
         GameObject camera = Camera.main.gameObject;
-        cameraAnchor.transform.Rotate(new Vector3(0f, camx * cameraSensitivity, 0f), Space.World);
+        cameraAnchor.transform.Rotate(new Vector3(0f, camx*cameraSensitivity, 0f), Space.World);
         if (!((Mathf.DeltaAngle(0f, camera.transform.rotation.eulerAngles.x) >= 75 && camy > 0f) || 
-            (Mathf.DeltaAngle(0f,camera.transform.rotation.eulerAngles.x) <= -75f && camy < 0f)))
+           (Mathf.DeltaAngle(0f,camera.transform.rotation.eulerAngles.x) <= -75f && camy < 0f)))
             cameraAnchor.transform.Rotate(new Vector3(camy * cameraSensitivity, 0f, 0f), Space.Self);
 
         //zoom camera in if it's hitting something
-        RaycastHit[] hits = new RaycastHit[2];
+       /* RaycastHit[] hits = new RaycastHit[2];
         Vector3 dir = (camera.transform.position - transform.position).normalized;
         Camera.main.transform.position = transform.position + dir * cameraOffset;
         if (Physics.RaycastNonAlloc(camera.transform.position, -dir, hits,
@@ -122,13 +124,13 @@ public class PlayerController : MonoBehaviour
             1<<wallMask|1<<floorMask) > 0)
         {
             Camera.main.transform.position -= dir * (hits[0].distance + 3f);
-        }
-
+        }*/
+        
         //move player (and camera anchor)
         float x = InputManager.GetAxis("Horizontal");
         float z = InputManager.GetAxis("Vertical");
         rb.AddForce(transform.rotation * (new Vector3(x, 0f, z)) * speed);
-        cameraAnchor.transform.position = transform.position;
+        //cameraAnchor.transform.position = transform.position;
 
         //apply gravity
         rb.AddForce(Vector3.down * gravity * 60f * Time.fixedDeltaTime);
