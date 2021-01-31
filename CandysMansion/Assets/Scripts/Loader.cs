@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public static class Loader
 {
     public enum Scene{
-        PostOffice1, BjornLevel, PostOffice2, SamsWildAdventure, PostOffice3, SoapLevel, Loading,
+        Menu, PostOffice1, BjornLevel, PostOffice2, SamsWildAdventure, PostOffice3, SoapLevel, Loading,
     }
 
     private static Action onLoaderCallback;

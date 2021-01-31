@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 0de2e7e26d4a2e44aa36621634286df9
+  - enabled: 1
     path: Assets/Scenes/PostOffice1.unity
     guid: 400b6aa644626124b9856974f7427400
   - enabled: 1
