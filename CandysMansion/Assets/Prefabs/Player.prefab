@@ -633,7 +633,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraAnchorPrefab: {fileID: 8024434251628680524, guid: 260b211119e972f4e9e3b283f5447a42,
     type: 3}
-  camera: {fileID: 0}
   speed: 3000
   cameraSensitivity: 4
   drag: {x: 10, y: 0}
@@ -815,7 +814,7 @@ MonoBehaviour:
         m_gravity: 1
         m_sensitivity: 1
         m_snap: 0
-        m_invert: 1
+        m_invert: 0
         m_type: 6
         m_axis: 4
         m_joystick: 0
@@ -828,7 +827,7 @@ MonoBehaviour:
         m_gravity: 1
         m_sensitivity: 0.2
         m_snap: 0
-        m_invert: 0
+        m_invert: 1
         m_type: 1
         m_axis: 1
         m_joystick: 0
