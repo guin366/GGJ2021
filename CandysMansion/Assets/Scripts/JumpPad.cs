@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
-    public GameObject forceDirection;
     public float jumpForce = 25.0f;
 
     // Start is called before the first frame update
