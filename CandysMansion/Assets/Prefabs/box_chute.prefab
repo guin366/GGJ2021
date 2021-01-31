@@ -139,4 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 1
   spawnPoint: {fileID: 4299695630533217429}
-  boxToSpawn: {fileID: 0}
+  boxToSpawn:
+  - {fileID: 0}
+  spawnCD: 0.5
+  spawnForce: 1000

@@ -10,11 +10,6 @@ public class LevelTimer : MonoBehaviour
     public Text text;
     public bool active = true;
 
-    private void Start()
-    {
-
-    }
-
     void Update()
     {
         if(active)
