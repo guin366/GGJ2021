@@ -5,6 +5,7 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     public float jumpForce = 25.0f;
+    public bool randomize = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,14 @@ public class JumpPad : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         //other.attachedRigidbody.AddForce(this.transform.up * jumpForce);
-        other.attachedRigidbody.velocity = this.transform.up * jumpForce*Time.deltaTime;
+        if(randomize)
+        {
+            other.attachedRigidbody.velocity = (this.transform.up * jumpForce * Time.deltaTime); 
+        }
+        else
+        {
+            other.attachedRigidbody.velocity = this.transform.up * jumpForce * Time.deltaTime;
+        }
     }
 
     
