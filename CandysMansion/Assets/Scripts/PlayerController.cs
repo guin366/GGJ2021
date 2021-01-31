@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public GameObject cameraAnchorPrefab;
     GameObject cameraAnchor;
 
-//    public GameObject camera;
     public float speed;
     public float cameraSensitivity;
     public Vector2 drag = new Vector2(10f, 0f);

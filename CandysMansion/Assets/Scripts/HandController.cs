@@ -59,6 +59,7 @@ public class HandController : MonoBehaviour
             Joint j = coll.GetComponent<Joint>();
             Destroy(j);
             grabbed.GetComponent<BombBox>().grabbed = false;
+            grabbed.GetComponent<BombBox>().thrown = true;
             grabbed = null;
             StartCoroutine(Throw(coll.attachedRigidbody));
         }
@@ -68,7 +69,7 @@ public class HandController : MonoBehaviour
     {
         for(int i=0; i<2; i++)
         {
-            proj.AddForce((transform.forward + transform.up).normalized * throwForce);
+            proj.AddForce((Camera.main.transform.forward + new Vector3(0,0.5f,0)).normalized * throwForce);
             yield return new WaitForFixedUpdate();
         }
     }
