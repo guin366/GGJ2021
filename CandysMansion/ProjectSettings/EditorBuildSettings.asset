@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PostOffice1.unity
+    guid: 400b6aa644626124b9856974f7427400
+  - enabled: 1
+    path: Assets/Scenes/BjornLevel.unity
+    guid: 50f4f1e317fcbc34fa2934c9e5780668
   m_configObjects: {}
