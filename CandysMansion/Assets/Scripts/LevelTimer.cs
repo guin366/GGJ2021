@@ -7,7 +7,6 @@ public class LevelTimer : MonoBehaviour
     public float currentTime;
     public GameObject trigger;
     private bool active;
-
     void Update()
     {
         if(active)

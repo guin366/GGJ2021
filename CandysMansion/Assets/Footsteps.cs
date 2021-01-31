@@ -5,18 +5,20 @@ using UnityEngine;
 public class Footsteps : MonoBehaviour
 {
 
-    CharacterController cc;
+    private Rigidbody rb;
+    private AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
-        cc = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(cc.isGrounded == true && cc.velocitiy.magnitude > 2f && audio.isPlaying == false)
+         if(rb.velocity.magnitude >= 2f && !audio.isPlaying)
         {
             audio.Play();
         }

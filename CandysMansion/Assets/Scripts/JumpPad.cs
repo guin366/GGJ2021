@@ -23,4 +23,6 @@ public class JumpPad : MonoBehaviour
         //other.attachedRigidbody.AddForce(this.transform.up * jumpForce);
         other.attachedRigidbody.velocity = this.transform.up * jumpForce*Time.deltaTime;
     }
+
+    
 }
