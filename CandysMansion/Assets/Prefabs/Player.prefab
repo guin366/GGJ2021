@@ -485,7 +485,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_ConnectedAnchor: {x: 0.00000035762787, y: 0, z: 0}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -781,6 +781,19 @@ MonoBehaviour:
         m_gamepadIndex: 0
       - m_positive: 0
         m_negative: 0
+        m_deadZone: 0
+        m_gravity: 1
+        m_sensitivity: 0.2
+        m_snap: 0
+        m_invert: 0
+        m_type: 1
+        m_axis: 0
+        m_joystick: 0
+        m_gamepadButton: 0
+        m_gamepadAxis: 0
+        m_gamepadIndex: 0
+      - m_positive: 0
+        m_negative: 0
         m_deadZone: 0.2
         m_gravity: 1
         m_sensitivity: 1
@@ -808,6 +821,19 @@ MonoBehaviour:
         m_gamepadButton: 0
         m_gamepadAxis: 0
         m_gamepadIndex: 0
+      - m_positive: 0
+        m_negative: 0
+        m_deadZone: 0
+        m_gravity: 1
+        m_sensitivity: 0.2
+        m_snap: 0
+        m_invert: 0
+        m_type: 1
+        m_axis: 1
+        m_joystick: 0
+        m_gamepadButton: 0
+        m_gamepadAxis: 0
+        m_gamepadIndex: 0
     - m_name: GrabR
       m_description: 
       m_bindings:
@@ -827,11 +853,11 @@ MonoBehaviour:
       - m_positive: 324
         m_negative: 0
         m_deadZone: 0
-        m_gravity: 1
-        m_sensitivity: 1
+        m_gravity: 1000
+        m_sensitivity: 1000
         m_snap: 0
         m_invert: 0
-        m_type: 0
+        m_type: 2
         m_axis: 0
         m_joystick: 0
         m_gamepadButton: 0
@@ -856,11 +882,11 @@ MonoBehaviour:
       - m_positive: 323
         m_negative: 0
         m_deadZone: 0
-        m_gravity: 1
-        m_sensitivity: 1
+        m_gravity: 1000
+        m_sensitivity: 1000
         m_snap: 0
         m_invert: 0
-        m_type: 0
+        m_type: 2
         m_axis: 0
         m_joystick: 0
         m_gamepadButton: 0
@@ -883,6 +909,35 @@ MonoBehaviour:
         m_gamepadAxis: 0
         m_gamepadIndex: 0
       - m_positive: 350
+        m_negative: 0
+        m_deadZone: 0
+        m_gravity: 1
+        m_sensitivity: 1
+        m_snap: 0
+        m_invert: 0
+        m_type: 0
+        m_axis: 0
+        m_joystick: 0
+        m_gamepadButton: 0
+        m_gamepadAxis: 0
+        m_gamepadIndex: 0
+    - m_name: Pause
+      m_description: 
+      m_bindings:
+      - m_positive: 27
+        m_negative: 0
+        m_deadZone: 0
+        m_gravity: 1
+        m_sensitivity: 1
+        m_snap: 0
+        m_invert: 0
+        m_type: 0
+        m_axis: 0
+        m_joystick: 0
+        m_gamepadButton: 0
+        m_gamepadAxis: 0
+        m_gamepadIndex: 0
+      - m_positive: 357
         m_negative: 0
         m_deadZone: 0
         m_gravity: 1
