@@ -28,7 +28,7 @@ public class BombBox : MonoBehaviour
                 if(other.collider.GetComponent<Rigidbody>() != null)
                 {
                 Debug.Log("explo");
-                other.collider.GetComponent<Rigidbody>().AddExplosionForce(5000,this.GetComponentInParent<Transform>().position,15,2,ForceMode.Force);
+                other.collider.GetComponent<Rigidbody>().AddExplosionForce(5000,this.GetComponentInParent<Transform>().position,25,2,ForceMode.Force);
                 thrown = false;
                 }
             }

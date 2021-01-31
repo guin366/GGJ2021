@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelTimer : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class LevelTimer : MonoBehaviour
     public GameObject trigger;
     public Text text;
     public bool active = true;
+    public Loader.Scene currentScene;
+    public Loader.Scene nextScene;
 
     void Update()
     {
@@ -23,7 +26,8 @@ public class LevelTimer : MonoBehaviour
 
         if(currentTime <= 0f)
         {
-            text.text = "The package is now lost forever!";
+            //text.text = "The package is now lost forever!";
+            Loader.Load(currentScene);
         }
     }
 
@@ -32,8 +36,7 @@ public class LevelTimer : MonoBehaviour
         if(active && other.tag.Equals("target"))
         {
             active = false;
-            //check if box is held by player
-            //win
+            Loader.Load(nextScene);
         }
     }
 }

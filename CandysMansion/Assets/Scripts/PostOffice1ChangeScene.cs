@@ -7,7 +7,7 @@ public class PostOffice1ChangeScene : MonoBehaviour
 {
     AudioSource audio;
     [SerializeField]
-    public Object nextScene;
+    public Loader.Scene nextScene;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,7 +27,7 @@ public class PostOffice1ChangeScene : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(nextScene.name);
+        Loader.Load(nextScene);
         yield return null;
     }
 }

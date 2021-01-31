@@ -7884,6 +7884,7 @@ GameObject:
   - component: {fileID: 1233141195}
   - component: {fileID: 1233141194}
   - component: {fileID: 1233141198}
+  - component: {fileID: 1233141199}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -8062,6 +8063,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1233141199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233141193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8baffbaf3c614dd49893b0c4de2ce0da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: 5
 --- !u!1001 &1233260398
 PrefabInstance:
   m_ObjectHideFlags: 0
