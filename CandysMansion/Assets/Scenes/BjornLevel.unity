@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -85771,8 +85771,8 @@ MonoBehaviour:
   trigger: {fileID: 0}
   text: {fileID: 0}
   active: 1
-  currentScene: 1
-  nextScene: 2
+  currentScene: 2
+  nextScene: 3
 --- !u!4 &1786586982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8623870776813244933, guid: fb853f9edeb85c746b58ad2fd98c1a9c,
