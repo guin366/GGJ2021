@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         floorMask = LayerMask.NameToLayer("Floor");
         boxMask = LayerMask.NameToLayer("Box");
         wallMask = LayerMask.NameToLayer("Wall");
+
     }
 
     private void OnEnable()
@@ -51,6 +52,8 @@ public class PlayerController : MonoBehaviour
         pauseMenu = Instantiate(pauseMenuPrefab);
         pauseMenu.GetComponentInChildren<Button>().onClick.AddListener(() => Application.Quit());
         pauseMenu.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
     }
 
     private void OnDisable()

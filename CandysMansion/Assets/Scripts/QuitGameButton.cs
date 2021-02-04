@@ -9,6 +9,7 @@ public class QuitGameButton : MonoBehaviour
 
     public void quitButtonPressed()
     {
+       
         Loader.Load(Loader.Scene.Menu);
    
     }
